@@ -8,6 +8,9 @@
 
 // 1.1 範例
 const alexAge = 25;
+const alexMembershipID = "GYM2024-12345";
+const isRunningOnTreadmill = true;
+console.log(alexAge,alexMembershipID,isRunningOnTreadmill);
 
 // ### 題目二：變數命名練習
 // - 瑜伽團課 - 300 元
@@ -16,17 +19,19 @@ const alexAge = 25;
 // 情境：Alex 這個月的運動預算有 3000 元
 // 請修改以下中文變數名稱，讓他符合變數語意
 
-const 變數一 = 300;
-const 變數二 = 500;
-const 變數三 = 1500;
-const 變數四 = 3000;
+const yogaGroupClass = 300;
+const weightTrainingGroupClass = 500;
+const weightTrainingPersonalClass = 1500;
+let AlexBudget = 3000;
 
 // ### 題目三：變數計算
 // 呈上題，Alex 想要規劃好自己的運動課程，需符合以下三個條件，請將花費總數計算在 AlexBudget 上，一起幫幫他吧！
 // 條件一：一定至少要買 1 堂重訓團課和瑜伽團課
 // 條件二：瑜伽團課只能一次買 3 堂
 // 條件三：一定要花到 2400 以上，並購買 5 堂課程
-
+let AlexBudget = AlexBudget - (yogaGroupClass + weightTrainingGroupClass);
+let AlexBudget = AlexBudget - (yogaGroupClass * 2);
+let AlexBudget = AlexBudget - weightTrainingGroupClass;
 console.log(`Alex 買完課程了，他一共剩下 ${AlexBudget} 元`);
 
 // ### 題目四：線稿圖截圖，看圖宣告變數
