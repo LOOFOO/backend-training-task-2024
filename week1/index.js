@@ -29,22 +29,29 @@ let AlexBudget = 3000;
 // 條件一：一定至少要買 1 堂重訓團課和瑜伽團課
 // 條件二：瑜伽團課只能一次買 3 堂
 // 條件三：一定要花到 2400 以上，並購買 5 堂課程
-AlexBudget = AlexBudget - (yogaGroupClass + weightTrainingGroupClass);// 3000-(300+500)=2200
-AlexBudget = AlexBudget - (yogaGroupClass * 2);// 2200-(300*2)=1600
-AlexBudget = AlexBudget - weightTrainingGroupClass;// 1600-500=1100
+AlexBudget -= (yogaGroupClass + weightTrainingGroupClass);// 3000-(300+500)=2200
+AlexBudget -= (yogaGroupClass * 2);// 2200-(300*2)=1600
+AlexBudget -= weightTrainingGroupClass;// 1600-500=1100
 console.log(`Alex 買完課程了，他一共剩下 ${AlexBudget} 元`);
 
 // ### 題目四：線稿圖截圖，看圖宣告變數
 // 請參考資料夾內 q4.webp 圖片
 // 請依照你看到的內容來嘗試設計變數和值（至少 3 個）
-
+const fourteenLessonTotalPrice = 2520; // 14堂課總金額2520元
+const oneLessonMinutes = 50; // 每堂50分鐘
+const averageLessonPrice = 180; // 平均每堂價格180元
 
 
 // ### 題目五：布林值與變數定義，看是否有用對 const, let
 // 情境：Alex 在往健身房的路上，望向城市的風景，請描述她看到的一切，並宣告變數與賦予值
 // 4-1. Alex 在等紅綠燈，他抬頭看一下現在是紅燈，還有 28 秒綠燈（最多 3 個宣告）
+let isRedLight = true; // 紅燈為true 可能會變綠燈用let
+let redLightSecond = 28; // 紅燈秒數為28 時間會變動用let
 // 4-2. 目前一起等待的機車有 8 台
+let waitingMotorcycles = 8; //機車數量會變動用let
 // 4.3. Alex 望向天空，看到天上有 5 朵白雲和 1 顆太陽
+let clouds = 5; // 雲可能會變動用let
+const sun = 1; // 太陽數量不變用const
 
 // ### 題目六：情境題：簡單變數計算
 // 情境：Alex 每天都會帶著 2000cc 的水壺
@@ -57,7 +64,9 @@ console.log(`Alex 買完課程了，他一共剩下 ${AlexBudget} 元`);
 
 let myWater = 2000; // 水壺容量
 myWater -= 500; // 早上喝了 500cc
-
+myWater -= 800; // 中午又喝了 800cc
+myWater += 1000; // 下午去健身前，先裝了 1000cc 的水
+myWater -= 700; // 健身時，又喝掉了 700cc
 console.log(`Alex 的水壺還有 ${myWater}cc 的水`);
 
 // ### 題目七：情境題：變數計算
@@ -69,40 +78,50 @@ console.log(`Alex 的水壺還有 ${myWater}cc 的水`);
 
 let totalBill = 0;
 const machineUsePrice = 50;
-
+const groupClassPrice = 150;
+const machineUsePriceTotal = machineUsePrice * 3;
+const groupClassesTotal = groupClassPrice * 2;
+totalBill= machineUsePriceTotal + groupClassesTotal;
 console.log(
-  `Anna 本週器械使用費共 ${machineUsePriceTotal} 元，團體課費用共 ${groupClassesTotal} 元，一共消費金額是 ${total}元`
+  `Anna 本週器械使用費共 ${machineUsePriceTotal} 元，團體課費用共 ${groupClassesTotal} 元，一共消費金額是 ${totalBill}元`
 );
 
 // ### 題目八：變數重新賦予值
 // 情境：請依照以下程式碼告知答案是多少，並在下方用註解方式寫上這五行程式碼做了什麼事
 // 以下程式碼請勿變更
 let a = 8; // 範例：宣告了一個 a 的變數，並賦予了一個 8 的數字型別
-let b = 0;
-a = 13;
-a = b + 4;
-a - b;
-b += 1;
+let b = 0; // 範例：宣告了一個 b 的變數，並賦予了一個 0 的數字型別
+a = 13; // 將 a 用 13 覆蓋
+a = b + 4; // 將 a 用 b + 4 覆蓋
+a - b; // 計算 a - b 的值，未賦予任何變數
+b += 1;// 將 b 用 b + 1 覆蓋
 
 // ### 題目九：型別查詢
 // 請不要觀看 console.log，透過註解告知解答每個變數的型別
-let c = 'world';
-let d = 456;
-let e = c + d;
-let f = false;
-let g = d + d;
-let h = f + g;
+let c = 'world'; // 字串
+let d = 456; // 數值
+let e = c + d; // 字串
+let f = false; // 布林
+let g = d + d; // 數值
+let h = f + g; // 數值
 
 // 請從以下新增註解，告知上面每行各別是哪些型別
-// a 是 string
-// b 是 ???
+// c 是字串
+// d 是數值
+// e 是字串
+// f 是布林
+// g 是數值
+// h 是數值
 
 // ### 題目十：傳值與傳參考
 // 情境：請依照程式碼告知答案是多少，並在下方用註解方式寫上這五行程式碼做了什麼事
 // 以下程式碼請勿變更
 
-let numberArr1 = [5, 10, 15];
-let numberArr2 = numberArr1;
-numberArr2.push(20);
-numberArr2 = [25, 30, 35];
+let numberArr1 = [5, 10, 15]; // 宣告 numberArr1 陣列，內容是數值 5,10,15
+let numberArr2 = numberArr1; // 宣告 numberArr2 陣列，內容與 numberArr1 相同
+numberArr2.push(20); // 將 20 放入 numberArr2 陣列
+numberArr2 = [25, 30, 35]; // 將 numberArr2 覆蓋成 [25, 30, 35] 陣列
 console.log(numberArr1, numberArr2);
+// 答案 
+//numberArr1 = [5, 10, 15, 20]
+//numberArr2 = [25, 30, 35]
